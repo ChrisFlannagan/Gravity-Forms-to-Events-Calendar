@@ -31,6 +31,12 @@ class Gravity_Forms_To_TEC {
 
 }
 
+add_action( 'init', function() {
+	require_once( 'class-aggregator.php' );
+	$aggregator = new adjust_aggregator();
+	$aggregator->hook();
+});
+
 add_role(
 	'approved_evt_sub',
 	'Approved Event Submitter',

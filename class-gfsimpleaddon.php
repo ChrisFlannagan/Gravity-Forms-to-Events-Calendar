@@ -40,6 +40,22 @@ class GF_TEC_AddOn extends GFAddOn {
 		add_action( 'save_post_tribe_events', [ $this, 'maybe_create_venue' ], 10, 2 );
 	}
 
+	public function scripts() {
+		$scripts = array(
+			array(
+				'handle'  => 'gf_to_tec',
+				'src'     => $this->get_base_url() . '/js/gf-to-tec.js',
+				'version' => $this->_version,
+				'deps'    => array( 'jquery' ),
+				'strings' => [],
+				'enqueue' => array(
+					array( "field_types" => array("select") )
+				)
+			),
+		);
+		return array_merge( parent::scripts(), $scripts );
+	}
+
 	public function populate_posts( $form ) {
 		if ( ! isset( $form['gravity-forms-to-tec']['enabled'] ) || $form['gravity-forms-to-tec']['enabled'] !== '1' ) {
 			return $form;

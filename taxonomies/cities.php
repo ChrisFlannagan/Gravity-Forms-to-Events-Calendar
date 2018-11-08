@@ -15,7 +15,7 @@ class TEC_GF_Cities {
 			'update_item'       => __( 'Update City' ),
 			'add_new_item'      => __( 'Add New City' ),
 			'new_item_name'     => __( 'New City Name' ),
-			'menu_name'         => __( 'Citie' ),
+			'menu_name'         => __( 'Cities' ),
 		];
 
 		register_taxonomy(
